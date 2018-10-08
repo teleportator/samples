@@ -1,0 +1,13 @@
+var rowToObj = function(row) {
+	var element = $(row);
+	var points = parseFloat(element.children('.cA-reward-divTableStateCreditPointsColumn')[0].innerText.replace(",", ""));
+	var debit = parseFloat(element.children('.cA-reward-divTableStateCreditDebitColumn')[0].innerText.replace(",", ""));
+	return {
+		date: element.children('.cT-divTableStateCreditDateColumn')[0].innerText,
+		points: points,
+		debit: parseFloat(element.children('.cA-reward-divTableStateCreditDebitColumn')[0].innerText.replace(",", "")),
+		reward: points / debit
+	}
+}
+
+var bestRewards = rewards.filter((i, e) => e.reward <= 5)
