@@ -10,4 +10,5 @@ var rowToObj = function(row) {
 	}
 }
 
-var bestRewards = rewards.filter((i, e) => e.reward <= 5)
+var rewards = $('.cT-divTableRow').map((i, e) => rowToObj(e));
+var bestRewards = rewards.filter((i, e) => e.reward <= 5);
